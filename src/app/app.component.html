@@ -1,0 +1,58 @@
+<h1 class="text-center p-3">Crud Angular</h1>
+<div class="container-fluid row">
+  <form class="col-4 p-3">
+    <H3 class="text-center text-secondary">REGISTRO DEL CLIENTE</H3>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Nombre del cliente</label>
+      <input type="text" class="form-control" name="Nombre">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Apellido del cliente</label>
+      <input type="text" class="form-control" name="Apellido">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Documento de Identidad</label>
+      <input type="text" class="form-control" name="Documento">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Fecha de nacimiento</label>
+      <input type="date" class="form-control" name="Fecha">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Correo</label>
+      <input type="text" class="form-control" name="Correo">
+    </div>
+
+   <button type="submit" class="btn btn-primary" name="btnregistar" value="ok">Registrar</button>
+  </form>
+  
+  <div class="col-8 p-4">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombres</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Documento</th>
+          <th scope="col">Fecha de nacimiento</th>
+          <th scope="col">Correo</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Angey</td>
+          <td>Garcia</td>
+          <td>364758902</td>
+          <td>09/08/1983</td>
+          <td>angey/gmail.com</td>
+          <td>
+            <a href="" class="btn btn-small btn-warning" ><i class="bi bi-pencil-square"></i></a>
+            <a href=""class="btn btn-small btn-danger"><i class="bi bi-trash"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
