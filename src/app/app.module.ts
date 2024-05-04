@@ -1,22 +1,34 @@
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { RouterOutlet } from '@angular/router';
-import { AppComponent } from "./app.component";
-import { NavbarComponent } from "./components/navbar/navbar.component";
-import { ListProductsComponent } from "./components/list-products/list-products.component";
+import { FormsModule } from '@angular/forms';
 
+import { AppComponent } from './app.component';
 
-@NgModule ({
+import{ HttpClient, HttpClientModule} from '@angular/common/http';
+
+import{ UsuariosService } from './usuarios.service';
+
+@NgModule({
     declarations:[
-        AppComponent,
-        NavbarComponent,
-        ListProductsComponent
+        AppComponent
     ],
-    imports: [
+    imports:[
         BrowserModule,
-        RouterOutlet
+        FormsModule,
+        HttpClientModule,
     ],
-    providers: [],
-    bootstrap: [AppComponent]
+    providers:[
+        UsuariosService
+
+    ],
+
+    bootstrap:[AppComponent]
 })
+
+    export class AppModule { }
+
+
+
+
+
