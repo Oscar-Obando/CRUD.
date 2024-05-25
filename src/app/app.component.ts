@@ -12,7 +12,7 @@ import {UsuariosService} from './usuarios.service';
 
 export class AppComponent implements OnInit {
   title = 'mi-primer-crud';
-  usuarios = null;
+  usuarios: any[] = [];
 
   usuario = {
     idUsuario: null,
@@ -30,50 +30,55 @@ export class AppComponent implements OnInit {
 
   obtenerUsuarios(){
     this.usuariosServicio.obtenerUsuarios().subscribe(
-      result => this.usuarios = result
+      result => this.usuarios = result,
+      error => console.error(error)
     );
   }
   
   altaUsuario(){
     this.usuariosServicio.altaUsuario(this.usuario).subscribe(
       datos => {
-        if(datos['resultado'] == 'OK') {
+        if(datos['resultado'] === 'OK') {
           alert(datos['mensaje']);
           this.obtenerUsuarios();
         }
-      }
+      },
+      error => console.error(error)
     );
   }
 
-  bajaUsuario(idUsuario){
+  bajaUsuario(idUsuario: number){
     this.usuariosServicio.bajaUsuario(idUsuario).subscribe(
       datos => {
-        if(datos['resultado'] == 'OK') {
+        if(datos['resultado'] === 'OK') {
           alert(datos['mensaje']);
           this.obtenerUsuarios();
         }
-      }
+      },
+      error => console.error(error)
     );
   }
 
   editarUsuario(){
     this.usuariosServicio.editarUsuario(this.usuarios).subscribe(
       datos => {
-        if(datos['resultado'] == 'OK'){
+        if(datos['resultado'] === 'OK'){
           alert(datos['mensaje']);
           this.obtenerUsuarios();
         }
-      }
+      },
+      error => console.error(error)
     );
   }
 
-  seleccionarUsuario(idUsuario){
+  seleccionarUsuario(idUsuario: number){
     this.usuariosServicio.seleccionarUsuario(idUsuario).subscribe(
-      result => this.usuario = result[0]
+      result => this.usuario = result[0],
+      error => console.error(error)
     );
   }
 
   hayresgistros(){
-    return true;
+    return this.usuarios && this.usuarios.length > 0;
   }
 }
